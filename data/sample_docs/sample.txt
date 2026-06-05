@@ -1,0 +1,5 @@
+﻿ARIA is an Agentic Retrieval and Intelligent Analysis system.
+
+It supports multiple document types including PDF, CSV and text files.
+
+ARIA uses LangGraph for orchestration and Qdrant for vector search.
