@@ -1,0 +1,19 @@
+ARIA Systems — Company Policy Document
+
+SECTION 1: CODE OF CONDUCT
+All employees are expected to maintain professional behavior at all times. This includes respectful communication, timely delivery of work, and adherence to data privacy standards. Any violation of the code of conduct must be reported to the HR department within 48 hours.
+
+SECTION 2: DATA PRIVACY POLICY
+All customer data must be handled in accordance with GDPR and local data protection laws. Employees must not share customer information with unauthorized third parties. Data must be encrypted at rest and in transit. Access to sensitive data is restricted to authorized personnel only.
+
+SECTION 3: REMOTE WORK POLICY
+Employees are allowed to work remotely up to 3 days per week. Remote work requires a stable internet connection and a dedicated workspace. Employees must be available during core hours of 10 AM to 4 PM in their local timezone. All work done remotely must be logged in the company project management tool.
+
+SECTION 4: LEAVE POLICY
+Every employee is entitled to 20 days of paid annual leave per year. Sick leave of up to 10 days per year is provided without requiring a medical certificate. Maternity and paternity leave follows government regulations. Leave requests must be submitted at least 7 days in advance except in emergency situations.
+
+SECTION 5: EXPENSE REIMBURSEMENT
+Business expenses up to $500 can be reimbursed without prior approval. Expenses above $500 require manager approval before being incurred. All expense claims must be submitted within 30 days of the expense with valid receipts. Travel expenses including flights and hotels must be booked through the company travel portal.
+
+SECTION 6: PERFORMANCE REVIEW
+Performance reviews are conducted twice a year in June and December. Each employee will be evaluated on key performance indicators agreed upon at the start of the year. Ratings range from 1 to 5 where 5 is exceptional performance. Employees rated below 2 will be placed on a performance improvement plan.

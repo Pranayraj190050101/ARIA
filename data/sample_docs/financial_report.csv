@@ -1,0 +1,13 @@
+quarter,year,revenue,expenses,profit,department,region,growth_percentage
+Q1,2024,450000,320000,130000,Data Science,South India,12.5
+Q2,2024,520000,350000,170000,Data Science,South India,15.6
+Q3,2024,610000,390000,220000,Data Science,South India,18.2
+Q4,2024,700000,420000,280000,Data Science,South India,22.1
+Q1,2024,380000,290000,90000,Engineering,North India,8.3
+Q2,2024,420000,310000,110000,Engineering,North India,10.5
+Q3,2024,490000,340000,150000,Engineering,North India,14.2
+Q4,2024,560000,370000,190000,Engineering,North India,16.8
+Q1,2024,210000,180000,30000,HR,West India,3.2
+Q2,2024,230000,190000,40000,HR,West India,4.5
+Q3,2024,260000,200000,60000,HR,West India,6.1
+Q4,2024,290000,210000,80000,HR,West India,8.9

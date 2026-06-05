@@ -1,0 +1,11 @@
+employee_id,name,department,role,salary,joining_date,performance_score,leave_balance,manager
+E001,Pranay Rodda,Data Science,ML Engineer,85000,2023-01-15,4.2,18,Rajesh Kumar
+E002,Ishwarya C,Engineering,Gen AI Developer,92000,2022-06-01,4.5,20,Suresh Patel
+E003,Aakash Mehta,Data Science,Data Analyst,72000,2023-03-10,3.8,15,Rajesh Kumar
+E004,Priya Sharma,Engineering,Backend Developer,88000,2021-11-20,4.1,12,Suresh Patel
+E005,Rahul Verma,HR,HR Manager,78000,2020-08-05,4.3,20,CEO
+E006,Sneha Iyer,Data Science,LLM Engineer,95000,2023-07-01,4.7,19,Rajesh Kumar
+E007,Vikram Singh,Engineering,DevOps Engineer,82000,2022-02-14,3.9,16,Suresh Patel
+E008,Ananya Das,Finance,Financial Analyst,76000,2021-05-30,4.0,14,CFO
+E009,Karthik Nair,Data Science,AI Researcher,98000,2022-09-15,4.8,20,Rajesh Kumar
+E010,Divya Reddy,Engineering,Frontend Developer,80000,2023-04-22,3.7,17,Suresh Patel

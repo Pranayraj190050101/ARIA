@@ -1,0 +1,22 @@
+ARIA Product FAQ — Frequently Asked Questions
+
+Q: What is ARIA?
+ARIA stands for Agentic Retrieval and Intelligent Analysis. It is an AI-powered multi-document assistant that can read PDFs, CSVs, and text files and answer questions intelligently using advanced RAG techniques combined with agentic reasoning.
+
+Q: What types of documents does ARIA support?
+ARIA currently supports three document types. PDF files for reports, manuals, and policy documents. CSV files for structured data like employee records and financial data. Plain text files for notes, FAQs, and unstructured content.
+
+Q: How does ARIA search for information?
+ARIA uses a hybrid search approach combining two methods. Semantic search using vector embeddings stored in Qdrant finds conceptually similar content. BM25 keyword search finds exact term matches. The results are combined using a ranking algorithm to give the most relevant answers.
+
+Q: Is my data secure with ARIA?
+Yes. ARIA uses guardrails to detect and redact PII before processing. All data is stored in an encrypted Qdrant vector database. API keys and credentials are stored in environment variables and never hardcoded. ARIA also filters prompt injection attempts.
+
+Q: How accurate are ARIA's answers?
+ARIA uses RAGAS evaluation framework to measure answer quality. Key metrics include faithfulness, answer relevancy, and context precision. All answers include source citations so users can verify the information directly.
+
+Q: Can ARIA handle multiple documents at once?
+Yes. ARIA's Ingestion Agent can process multiple documents of different types simultaneously. The Orchestrator Agent intelligently decides which documents to search based on the user's query.
+
+Q: What LLM does ARIA use?
+ARIA is built to work with OpenAI GPT-4o as the primary LLM. It can also be configured to use other models like Gemini or open source models through LangChain's flexible model interface.
