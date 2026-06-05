@@ -1,0 +1,39 @@
+# Core
+langchain
+langchain-openai
+langchain-community
+langgraph
+openai
+
+# Document parsing
+pymupdf
+pandas
+openpyxl
+
+# Vector DB
+qdrant-client
+fastembed
+
+# Hybrid search
+rank-bm25
+
+# API
+fastapi
+uvicorn
+
+# Frontend
+streamlit
+
+# Guardrails
+guardrails-ai
+
+# Evaluation
+ragas
+
+# Utilities
+python-dotenv
+tiktoken
+pydantic
+
+# Testing
+pytest
