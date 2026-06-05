@@ -1,27 +1,21 @@
-from google import genai
-from dotenv import load_dotenv
+from sentence_transformers import SentenceTransformer
 import os
 
-load_dotenv()
+# Runs locally — no API key needed, no rate limits!
+model = SentenceTransformer('all-MiniLM-L6-v2')
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-
-VECTOR_SIZE = 3072  # gemini-embedding-001 dimension
+VECTOR_SIZE = 384  # all-MiniLM-L6-v2 dimension
 
 
 def get_embedding(text: str) -> list[float]:
     """
-    Generate embedding for a single text using Gemini.
+    Generate embedding locally using HuggingFace SentenceTransformer.
     """
-    result = client.models.embed_content(
-        model="models/gemini-embedding-001",
-        contents=text
-    )
-    return result.embeddings[0].values
+    return model.encode(text).tolist()
 
 
 def get_embeddings_batch(texts: list[str]) -> list[list[float]]:
     """
     Generate embeddings for a list of texts.
     """
-    return [get_embedding(text) for text in texts]
+    return model.encode(texts).tolist()

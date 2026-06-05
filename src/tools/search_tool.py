@@ -13,7 +13,7 @@ client = QdrantClient(
 )
 
 COLLECTION_NAME = "aria_documents"
-VECTOR_SIZE =  3072 # gemini-embedding-001 dimension
+VECTOR_SIZE =  384 # all-MiniLM-L6-v2 dimension
 
 
 def create_collection():
