@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-import os
+
 import re
 
 load_dotenv()
@@ -64,7 +64,7 @@ def guard_input(query: str) -> tuple[bool, str]:
     # Check PII in query
     has_pii, cleaned = check_pii(query)
     if has_pii:
-        print(f"[Evaluator Agent] PII detected in query — redacted")
+        print("[Evaluator Agent] PII detected in query — redacted")
         return True, cleaned  # Allow but redacted
 
     return True, query
@@ -76,7 +76,7 @@ def guard_output(answer: str) -> str:
     """
     has_pii, cleaned = check_pii(answer)
     if has_pii:
-        print(f"[Evaluator Agent] PII detected in answer — redacted")
+        print("[Evaluator Agent] PII detected in answer — redacted")
     return cleaned
 
 

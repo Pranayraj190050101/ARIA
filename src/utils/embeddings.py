@@ -1,5 +1,5 @@
 from sentence_transformers import SentenceTransformer
-import os
+
 
 # Runs locally — no API key needed, no rate limits!
 model = SentenceTransformer('all-MiniLM-L6-v2')
