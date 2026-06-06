@@ -75,7 +75,7 @@ def retrieve_node(state: ARIAState) -> ARIAState:
     results = hybrid_search(state["query"], top_k=5)
 
     # Filter by score threshold
-    filtered = [r for r in results if r["score"] >= 0.60]
+    filtered = [r for r in results if r["score"] >= 0.40]
     if not filtered:
         filtered = results[:2]  # fallback to top 2
 
