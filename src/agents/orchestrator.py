@@ -75,6 +75,8 @@ def retrieve_node(state: ARIAState) -> ARIAState:
 # ── Node 4: Generate answer ───────────────────────────────
 def generate_node(state: ARIAState) -> ARIAState:
     print("[Orchestrator] Step 4: Generating answer...")
+    groq_key = os.getenv("GROQ_API_KEY")
+    print(f"[Orchestrator] GROQ_API_KEY loaded: {bool(groq_key)}")
 
     context = "\n\n".join([r["content"] for r in state["search_results"]])
 
