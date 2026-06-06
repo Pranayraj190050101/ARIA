@@ -1,3 +1,14 @@
+---
+title: ARIA
+emoji: 🤖
+colorFrom: blue
+colorTo: purple
+sdk: streamlit
+sdk_version: 1.58.0
+app_file: app.py
+pinned: false
+---
+
 # 🤖 ARIA — Agentic Retrieval & Intelligent Analysis
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
