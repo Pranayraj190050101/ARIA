@@ -34,14 +34,17 @@ with st.sidebar:
 
     st.divider()
 
-    st.subheader("📄 Available Documents")
+    # Just show documents — no selector needed
+    st.subheader("📄 Loaded Documents")
     documents = os.listdir(UPLOAD_DIR) if os.path.exists(UPLOAD_DIR) else []
-
     if documents:
-        selected_doc = st.selectbox("Select document to query:", documents)
+        for doc in documents:
+            st.caption(f"📄 {doc}")
     else:
         st.info("No documents yet. Upload one!")
-        selected_doc = None
+
+    st.divider()
+    st.info("💡 ARIA automatically searches across ALL documents to find the best answer!")
 
 # ── Main chat area ────────────────────────────────────────
 st.subheader("💬 Ask ARIA")
@@ -54,8 +57,8 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 if prompt := st.chat_input("Ask anything about your documents..."):
-    if not selected_doc:
-        st.error("Please select a document first!")
+    if not documents:
+        st.error("Please upload at least one document first!")
     else:
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
@@ -64,9 +67,8 @@ if prompt := st.chat_input("Ask anything about your documents..."):
         with st.chat_message("assistant"):
             with st.spinner("ARIA is thinking..."):
                 try:
-                    file_path = os.path.join(UPLOAD_DIR, selected_doc)
                     result = run_aria(
-                        file_path=file_path,
+                        file_path=UPLOAD_DIR,
                         query=prompt
                     )
 

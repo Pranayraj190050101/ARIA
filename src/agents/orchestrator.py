@@ -49,11 +49,23 @@ def guard_node(state: ARIAState) -> ARIAState:
 
 # ── Node 2: Ingest documents ──────────────────────────────
 def ingest_node(state: ARIAState) -> ARIAState:
-    print("[Orchestrator] Step 2: Ingesting document...")
-    chunks = run_ingestion_agent(state["file_path"])
-    store_chunks(chunks)
-    build_bm25_index(chunks)
-    state["chunks"] = chunks
+    print("[Orchestrator] Step 2: Ingesting all documents...")
+    all_chunks = []
+    doc_dir = "data/sample_docs"
+
+    for filename in os.listdir(doc_dir):
+        if filename.endswith((".pdf", ".csv", ".txt")):
+            file_path = os.path.join(doc_dir, filename)
+            try:
+                chunks = run_ingestion_agent(file_path)
+                all_chunks.extend(chunks)
+                print(f"[Orchestrator] Ingested: {filename}")
+            except Exception as e:
+                print(f"[Orchestrator] Skipped {filename}: {e}")
+
+    store_chunks(all_chunks)
+    build_bm25_index(all_chunks)
+    state["chunks"] = all_chunks
     return state
 
 
