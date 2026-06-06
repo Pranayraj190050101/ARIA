@@ -155,7 +155,7 @@ def run_aria(file_path: str, query: str) -> dict:
 
     result = aria.invoke({
         "query": query,
-        "file_path": file_path,
+        "file_path": "data/sample_docs",
         "chunks": [],
         "search_results": [],
         "answer": "",
