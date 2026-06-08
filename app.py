@@ -1,6 +1,19 @@
 import streamlit as st
 from src.agents.orchestrator import run_aria
 import os
+# Pre-load documents on startup
+import threading
+
+def startup_ingest():
+    try:
+        from src.agents.orchestrator import run_aria
+        print("[Startup] Pre-ingesting documents...")
+        run_aria(file_path="data/sample_docs", query="startup")
+        print("[Startup] Documents ready!")
+    except Exception as e:
+        print(f"[Startup] Ingestion error: {e}")
+
+threading.Thread(target=startup_ingest, daemon=True).start()
 
 # ── Page config ───────────────────────────────────────────
 st.set_page_config(
