@@ -1,22 +1,81 @@
-ARIA Product FAQ — Frequently Asked Questions
+ARIA PRODUCT FAQ — COMPREHENSIVE GUIDE
+=======================================
 
 Q: What is ARIA?
-ARIA stands for Agentic Retrieval and Intelligent Analysis. It is an AI-powered multi-document assistant that can read PDFs, CSVs, and text files and answer questions intelligently using advanced RAG techniques combined with agentic reasoning.
+ARIA stands for Agentic Retrieval and Intelligent Analysis. It is an AI-powered multi-document assistant that can intelligently read and understand PDF files, CSV datasets, and plain text documents to answer questions accurately. ARIA uses a combination of advanced retrieval techniques and large language models to provide grounded, cited answers.
 
 Q: What types of documents does ARIA support?
-ARIA currently supports three document types. PDF files for reports, manuals, and policy documents. CSV files for structured data like employee records and financial data. Plain text files for notes, FAQs, and unstructured content.
+ARIA currently supports three document types:
+1. PDF files — for reports, manuals, policy documents, and research papers
+2. CSV files — for structured data like employee records, financial data, and inventory
+3. Plain text files — for notes, FAQs, runbooks, and unstructured content
+ARIA automatically detects the file type and routes it to the appropriate parsing tool.
 
-Q: How does ARIA search for information?
-ARIA uses a hybrid search approach combining two methods. Semantic search using vector embeddings stored in Qdrant finds conceptually similar content. BM25 keyword search finds exact term matches. The results are combined using a ranking algorithm to give the most relevant answers.
+Q: How does ARIA's multi-agent architecture work?
+ARIA is built on a LangGraph-based multi-agent architecture with four specialized agents:
 
-Q: Is my data secure with ARIA?
-Yes. ARIA uses guardrails to detect and redact PII before processing. All data is stored in an encrypted Qdrant vector database. API keys and credentials are stored in environment variables and never hardcoded. ARIA also filters prompt injection attempts.
+1. Ingestion Agent: Responsible for detecting file types and routing documents to the correct parsing tool. Supports PDF (PyMuPDF), CSV (Pandas), and plain text parsers. Chunks documents intelligently based on content type.
 
-Q: How accurate are ARIA's answers?
-ARIA uses RAGAS evaluation framework to measure answer quality. Key metrics include faithfulness, answer relevancy, and context precision. All answers include source citations so users can verify the information directly.
+2. Retriever Agent: Handles hybrid search combining two methods. BM25 keyword search finds exact term matches. Semantic search using vector embeddings in Qdrant finds conceptually similar content. Results from both methods are combined and ranked for relevance.
 
-Q: Can ARIA handle multiple documents at once?
-Yes. ARIA's Ingestion Agent can process multiple documents of different types simultaneously. The Orchestrator Agent intelligently decides which documents to search based on the user's query.
+3. Orchestrator Agent: The master brain of ARIA built on LangGraph. It receives user queries, coordinates the ingestion and retrieval agents, generates answers using the Groq LLM, and manages the overall workflow through a state machine.
+
+4. Evaluator Agent: Runs after every response to check quality and safety. It calculates RAGAS-style metrics (faithfulness, answer relevancy, context precision) and applies guardrails to detect and redact PII and block prompt injection attempts.
+
+Q: What is hybrid search and why does ARIA use it?
+Hybrid search combines two complementary retrieval methods:
+- Semantic search: Uses vector embeddings to find documents that are conceptually similar to the query, even if they don't contain the exact words
+- BM25 keyword search: Uses traditional keyword matching to find documents containing exact terms from the query
+
+By combining both methods, ARIA achieves better retrieval accuracy than either method alone. Semantic search is better for conceptual questions while BM25 is better for specific keyword lookups. ARIA deduplicates and re-ranks results from both methods to return the most relevant context.
+
+Q: What are RAGAS metrics?
+RAGAS (Retrieval Augmented Generation Assessment) is a framework for evaluating the quality of RAG system responses. ARIA calculates three key metrics on every response:
+
+1. Faithfulness (0 to 1): Measures whether the answer is grounded in the retrieved context. A score of 1.0 means every claim in the answer can be traced back to the source documents. A low faithfulness score indicates hallucination.
+
+2. Answer Relevancy (0 to 1): Measures how well the answer addresses the user's question. A score close to 1.0 means the answer directly and completely answers the question asked.
+
+3. Context Precision (0 to 1): Measures how much of the retrieved context was actually used in generating the answer. A high score means the retrieval was precise and focused.
+
+The overall score is the average of all three metrics. Scores above 0.7 indicate high quality responses.
+
+Q: How does ARIA protect against security threats?
+ARIA implements multiple layers of security through its Evaluator Agent:
+
+PII Detection and Redaction: ARIA automatically detects and redacts personally identifiable information including email addresses, phone numbers, social security numbers, and credit card numbers from both queries and responses. Detected PII is replaced with [REDACTED] before processing.
+
+Prompt Injection Detection: ARIA scans all incoming queries for prompt injection attempts — malicious instructions designed to override the system's behavior. Phrases like "ignore previous instructions", "act as", "jailbreak", and "bypass" are detected and the query is blocked with a warning message.
+
+Output Safety Filtering: All generated responses are scanned for PII before being returned to the user, providing an additional safety layer even if any sensitive information slipped through the input filter.
 
 Q: What LLM does ARIA use?
-ARIA is built to work with OpenAI GPT-4o as the primary LLM. It can also be configured to use other models like Gemini or open source models through LangChain's flexible model interface.
+ARIA uses Groq's API with the Llama-3.3-70b-versatile model for answer generation. Groq was chosen because:
+- It offers a generous free tier with no rate limits for reasonable usage
+- Llama-3.3-70b provides excellent reasoning and instruction following
+- Groq's inference speed is significantly faster than OpenAI (typically under 1 second)
+- It is completely open source with no vendor lock-in
+
+For embeddings, ARIA uses HuggingFace's all-MiniLM-L6-v2 model which runs completely locally with no API calls, no rate limits, and no costs.
+
+Q: How does ARIA handle documents it cannot find information in?
+When ARIA cannot find relevant information in any of the loaded documents, it responds with "I don't have enough information to answer that" rather than hallucinating an answer. This behavior is controlled by the system prompt which instructs the LLM to only answer based on the provided context.
+
+Q: Can I upload my own documents to ARIA?
+Yes. ARIA supports document upload through the sidebar file uploader. You can upload PDF, CSV, or TXT files up to 200MB. Once uploaded, ARIA automatically ingests the document into its knowledge base and makes it available for querying immediately.
+
+Q: What is the tech stack behind ARIA?
+ARIA is built with the following technology stack:
+- Agent Framework: LangGraph (agentic orchestration)
+- LLM: Groq API with Llama-3.3-70b-versatile
+- Embeddings: HuggingFace all-MiniLM-L6-v2 (local)
+- Vector Database: Qdrant Cloud
+- Hybrid Search: BM25 (rank-bm25) + Qdrant semantic search
+- Document Parsing: PyMuPDF (PDF), Pandas (CSV), Python (TXT)
+- Guardrails: Custom regex-based PII and injection detection
+- Evaluation: Custom RAGAS-style metrics
+- API: FastAPI with uvicorn
+- Frontend: Streamlit
+- Containerization: Docker
+- CI/CD: GitHub Actions (lint, test, Docker build)
+- Deployment: HuggingFace Spaces

@@ -1,13 +1,17 @@
-quarter,year,revenue,expenses,profit,department,region,growth_percentage
-Q1,2024,450000,320000,130000,Data Science,South India,12.5
-Q2,2024,520000,350000,170000,Data Science,South India,15.6
-Q3,2024,610000,390000,220000,Data Science,South India,18.2
-Q4,2024,700000,420000,280000,Data Science,South India,22.1
-Q1,2024,380000,290000,90000,Engineering,North India,8.3
-Q2,2024,420000,310000,110000,Engineering,North India,10.5
-Q3,2024,490000,340000,150000,Engineering,North India,14.2
-Q4,2024,560000,370000,190000,Engineering,North India,16.8
-Q1,2024,210000,180000,30000,HR,West India,3.2
-Q2,2024,230000,190000,40000,HR,West India,4.5
-Q3,2024,260000,200000,60000,HR,West India,6.1
-Q4,2024,290000,210000,80000,HR,West India,8.9
+quarter,year,revenue,expenses,profit,profit_margin_pct,department,region,growth_pct,headcount,avg_deal_size,new_clients,churn_rate_pct,top_product
+Q1,2024,450000,320000,130000,28.9,Data Science,South India,12.5,12,37500,3,2.1,RAG Pipeline Services
+Q2,2024,520000,350000,170000,32.7,Data Science,South India,15.6,14,37142,4,1.8,Agentic AI Solutions
+Q3,2024,610000,390000,220000,36.1,Data Science,South India,18.2,16,38125,5,1.5,LLM Consulting
+Q4,2024,700000,420000,280000,40.0,Data Science,South India,22.1,18,38888,6,1.2,Enterprise RAG Platform
+Q1,2024,380000,290000,90000,23.7,Engineering,North India,8.3,20,19000,2,3.2,API Development
+Q2,2024,420000,310000,110000,26.2,Engineering,North India,10.5,22,19090,3,2.8,Microservices
+Q3,2024,490000,340000,150000,30.6,Engineering,North India,14.2,24,20416,4,2.3,Cloud Migration
+Q4,2024,560000,370000,190000,33.9,Engineering,North India,16.8,26,21538,5,2.0,DevOps Automation
+Q1,2024,210000,180000,30000,14.3,HR,West India,3.2,8,26250,1,4.5,HR Tech Solutions
+Q2,2024,230000,190000,40000,17.4,HR,West India,4.5,8,28750,1,4.2,Talent Analytics
+Q3,2024,260000,200000,60000,23.1,HR,West India,6.1,9,28888,2,3.8,People Analytics Platform
+Q4,2024,290000,210000,80000,27.6,HR,West India,8.9,10,29000,2,3.5,Workforce Planning Tool
+Q1,2024,180000,150000,30000,16.7,Finance,East India,5.1,6,30000,1,5.0,Financial Reporting
+Q2,2024,200000,160000,40000,20.0,Finance,East India,6.3,6,33333,1,4.8,Compliance Automation
+Q3,2024,225000,170000,55000,24.4,Finance,East India,8.7,7,32142,2,4.2,Risk Analytics
+Q4,2024,260000,185000,75000,28.8,Finance,East India,11.2,8,32500,2,3.9,Treasury Management

@@ -48,7 +48,19 @@ def guard_node(state: ARIAState) -> ARIAState:
 
 
 # ── Node 2: Ingest documents ──────────────────────────────
+# Track ingested state globally
+_ingested = False
+_all_chunks = []
+
 def ingest_node(state: ARIAState) -> ARIAState:
+    global _ingested, _all_chunks
+
+    if _ingested:
+        print("[Orchestrator] Step 2: Documents already ingested, skipping...")
+        state["chunks"] = _all_chunks
+        build_bm25_index(_all_chunks)
+        return state
+
     print("[Orchestrator] Step 2: Ingesting all documents...")
     all_chunks = []
     doc_dir = "data/sample_docs"
@@ -66,6 +78,9 @@ def ingest_node(state: ARIAState) -> ARIAState:
     store_chunks(all_chunks)
     build_bm25_index(all_chunks)
     state["chunks"] = all_chunks
+
+    _ingested = True
+    _all_chunks = all_chunks
     return state
 
 
@@ -75,10 +90,10 @@ def retrieve_node(state: ARIAState) -> ARIAState:
     results = hybrid_search(state["query"], top_k=5)
 
     # Filter by score threshold
-    filtered = [r for r in results if r["score"] >= 0.40]
+    filtered = [r for r in results if r["score"] >= 0.20]
     if not filtered:
-        filtered = results[:2]  # fallback to top 2
-
+        filtered = results[:3]
+    
     state["search_results"] = filtered
     state["sources"] = list(set([r["source"] for r in filtered]))
     return state

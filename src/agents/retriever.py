@@ -49,10 +49,24 @@ def bm25_search(query: str, top_k: int = 5) -> list[dict]:
 def hybrid_search(query: str, top_k: int = 5) -> list[dict]:
     """
     Hybrid search — combines semantic + BM25 results.
-    Deduplicates and returns top results.
+    Normalizes scores before combining.
     """
     semantic_results = semantic_search(query, top_k)
     bm25_results = bm25_search(query, top_k)
+
+    # Normalize BM25 scores to 0-1 range
+    if bm25_results:
+        max_bm25 = max(float(r["score"]) for r in bm25_results)
+        if max_bm25 > 0:
+            for r in bm25_results:
+                r["score"] = float(r["score"]) / max_bm25
+
+    # Normalize semantic scores to 0-1 range
+    if semantic_results:
+        max_sem = max(float(r["score"]) for r in semantic_results)
+        if max_sem > 0:
+            for r in semantic_results:
+                r["score"] = float(r["score"]) / max_sem
 
     # Combine and deduplicate by content
     seen = set()
@@ -63,6 +77,9 @@ def hybrid_search(query: str, top_k: int = 5) -> list[dict]:
         if content_key not in seen:
             seen.add(content_key)
             combined.append(result)
+
+    # Sort by score descending
+    combined.sort(key=lambda x: float(x["score"]), reverse=True)
 
     print(f"[Retriever Agent] Hybrid search returned {len(combined)} results")
     return combined[:top_k]

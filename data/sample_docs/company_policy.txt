@@ -1,19 +1,130 @@
-ARIA Systems — Company Policy Document
+ARIA SYSTEMS PVT LTD — EMPLOYEE POLICY HANDBOOK 2024
+=====================================================
 
 SECTION 1: CODE OF CONDUCT
-All employees are expected to maintain professional behavior at all times. This includes respectful communication, timely delivery of work, and adherence to data privacy standards. Any violation of the code of conduct must be reported to the HR department within 48 hours.
+---------------------------
+All employees of ARIA Systems are expected to uphold the highest standards of professional conduct. This includes treating colleagues, clients, and stakeholders with respect and dignity at all times. Employees must not engage in any form of harassment, discrimination, or bullying in the workplace or at company-sponsored events.
 
-SECTION 2: DATA PRIVACY POLICY
-All customer data must be handled in accordance with GDPR and local data protection laws. Employees must not share customer information with unauthorized third parties. Data must be encrypted at rest and in transit. Access to sensitive data is restricted to authorized personnel only.
+Employees are required to:
+- Maintain confidentiality of all proprietary and client information
+- Report any conflicts of interest to their manager or HR immediately
+- Avoid using company resources for personal gain
+- Adhere to the company's data security and privacy guidelines at all times
+- Dress professionally when meeting clients or attending official events
 
-SECTION 3: REMOTE WORK POLICY
-Employees are allowed to work remotely up to 3 days per week. Remote work requires a stable internet connection and a dedicated workspace. Employees must be available during core hours of 10 AM to 4 PM in their local timezone. All work done remotely must be logged in the company project management tool.
+Violations of the code of conduct will result in disciplinary action ranging from a written warning to termination, depending on the severity of the offense. All complaints must be reported to HR within 48 hours of the incident.
 
-SECTION 4: LEAVE POLICY
-Every employee is entitled to 20 days of paid annual leave per year. Sick leave of up to 10 days per year is provided without requiring a medical certificate. Maternity and paternity leave follows government regulations. Leave requests must be submitted at least 7 days in advance except in emergency situations.
+SECTION 2: WORKING HOURS AND ATTENDANCE
+----------------------------------------
+Standard working hours at ARIA Systems are 9:00 AM to 6:00 PM, Monday through Friday. The core hours during which all employees must be available are 10:00 AM to 4:00 PM. Employees are entitled to a 1-hour lunch break between 1:00 PM and 2:00 PM.
 
-SECTION 5: EXPENSE REIMBURSEMENT
-Business expenses up to $500 can be reimbursed without prior approval. Expenses above $500 require manager approval before being incurred. All expense claims must be submitted within 30 days of the expense with valid receipts. Travel expenses including flights and hotels must be booked through the company travel portal.
+Employees who need to adjust their working hours must get prior approval from their direct manager. Flexible working arrangements are available for employees who have completed at least 6 months of service. Part-time arrangements may be considered on a case-by-case basis.
 
-SECTION 6: PERFORMANCE REVIEW
-Performance reviews are conducted twice a year in June and December. Each employee will be evaluated on key performance indicators agreed upon at the start of the year. Ratings range from 1 to 5 where 5 is exceptional performance. Employees rated below 2 will be placed on a performance improvement plan.
+Attendance is tracked through the company's HR portal. Employees with more than 3 unexcused absences in a month will receive a formal warning. Chronic absenteeism may lead to disciplinary action or termination.
+
+SECTION 3: LEAVE POLICY
+------------------------
+ARIA Systems provides the following leave entitlements to all full-time employees:
+
+Annual Leave:
+- Employees are entitled to 20 days of paid annual leave per calendar year
+- Leave must be approved by the manager at least 7 days in advance
+- A maximum of 10 unused leave days can be carried forward to the next year
+- Leave encashment is available for up to 5 days per year
+
+Sick Leave:
+- Employees are entitled to 10 days of paid sick leave per year
+- Sick leave of up to 2 consecutive days does not require a medical certificate
+- For sick leave exceeding 2 days, a medical certificate from a registered doctor is required
+- Unused sick leave cannot be carried forward or encashed
+
+Casual Leave:
+- Employees are entitled to 6 days of casual leave per year
+- Casual leave cannot be taken for more than 3 consecutive days
+- Casual leave must be applied for at least 24 hours in advance except in emergencies
+
+Maternity Leave:
+- Female employees are entitled to 26 weeks of paid maternity leave for the first two children
+- Maternity leave can begin up to 8 weeks before the expected delivery date
+- Additional unpaid leave of up to 12 weeks may be requested after maternity leave
+
+Paternity Leave:
+- Male employees are entitled to 15 days of paid paternity leave
+- Paternity leave must be taken within 6 months of the child's birth
+- Paternity leave applies to both biological and adoptive parents
+
+Bereavement Leave:
+- 5 days of paid leave for the death of an immediate family member (spouse, parent, child, sibling)
+- 3 days of paid leave for the death of extended family members (grandparent, in-laws)
+
+SECTION 4: REMOTE WORK POLICY
+------------------------------
+ARIA Systems supports a hybrid work model. Employees are allowed to work remotely up to 3 days per week, subject to manager approval. The remaining days must be spent in the office.
+
+Requirements for remote work:
+- A stable internet connection of at least 25 Mbps
+- A dedicated, quiet workspace free from distractions
+- Access to company VPN and security tools
+- Availability on all communication channels during core hours
+- Participation in all scheduled meetings via video
+
+Employees working remotely must log their hours in the HR portal. Remote work privileges may be revoked if the employee's performance declines or if they fail to meet attendance requirements.
+
+SECTION 5: PERFORMANCE REVIEW POLICY
+--------------------------------------
+Performance reviews at ARIA Systems are conducted twice a year — in June and December. The review process involves:
+
+1. Self-Assessment: Employees complete a self-evaluation form rating themselves on key performance indicators (KPIs) agreed upon at the start of the year.
+
+2. Manager Assessment: Direct managers evaluate each employee on the same KPIs and provide detailed written feedback.
+
+3.360-Degree Feedback: Peers and cross-functional team members provide anonymous feedback for employees at Senior Engineer level and above.
+
+4. Review Meeting: A one-on-one meeting between the employee and manager to discuss the assessment, set goals for the next period, and discuss career development.
+
+Performance ratings are on a scale of 1 to 5:
+- 5: Exceptional — consistently exceeds all expectations
+- 4: Exceeds Expectations — frequently goes above and beyond
+- 3: Meets Expectations — consistently delivers on all requirements
+- 2: Needs Improvement — partially meets expectations
+- 1: Unsatisfactory — fails to meet minimum expectations
+
+Employees rated 4 or 5 are eligible for performance bonuses and accelerated promotions. Employees rated 1 or 2 will be placed on a Performance Improvement Plan (PIP) with specific targets and a 90-day review period.
+
+SECTION 6: EXPENSE REIMBURSEMENT POLICY
+-----------------------------------------
+ARIA Systems reimburses employees for legitimate business expenses incurred while performing their duties.
+
+Expense Categories and Limits:
+- Travel by cab/auto for client visits: Up to Rs. 2,000 per day
+- Air travel: Economy class only, must be pre-approved by manager
+- Hotel accommodation: Up to Rs. 5,000 per night in Tier-1 cities
+- Client meals and entertainment: Up to Rs. 3,000 per person per event
+- Training and certifications: Up to Rs. 25,000 per employee per year
+- Office supplies: Up to Rs. 1,000 per month without prior approval
+
+All expense claims must be submitted within 30 days of the expense being incurred. Claims submitted after 30 days will not be reimbursed. Original receipts must be attached for all claims above Rs. 500.
+
+SECTION 7: GRIEVANCE REDRESSAL
+--------------------------------
+ARIA Systems has a formal grievance redressal mechanism to address employee complaints fairly and promptly. Employees can raise grievances related to:
+- Workplace harassment or discrimination
+- Unfair treatment or bias in performance reviews
+- Violation of company policies by colleagues or managers
+- Health and safety concerns
+
+Grievances must be submitted in writing to the HR department within 30 days of the incident. HR will acknowledge the grievance within 3 working days and complete the investigation within 30 working days. All grievances are treated with strict confidentiality.
+
+SECTION 8: TECHNOLOGY AND DATA SECURITY POLICY
+------------------------------------------------
+All employees must comply with ARIA Systems' technology and data security policies:
+
+- Company laptops must have full-disk encryption enabled at all times
+- Employees must use strong passwords (minimum 12 characters with mixed case, numbers, and symbols)
+- Multi-factor authentication (MFA) is mandatory for all company accounts
+- Personal devices may not be used to store or process company data without IT approval
+- Employees must not install unauthorized software on company devices
+- All data must be backed up to approved company storage systems
+- Employees must report any suspected security incidents or data breaches to IT within 1 hour
+
+Violation of data security policies may result in immediate termination and legal action.

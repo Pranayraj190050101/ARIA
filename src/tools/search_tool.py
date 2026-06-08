@@ -4,6 +4,7 @@ from src.utils.embeddings import get_embedding
 from dotenv import load_dotenv
 import os
 import uuid
+import time
 
 load_dotenv()
 
@@ -13,7 +14,7 @@ client = QdrantClient(
 )
 
 COLLECTION_NAME = "aria_documents"
-VECTOR_SIZE =  384 # all-MiniLM-L6-v2 dimension
+VECTOR_SIZE = 384  # all-MiniLM-L6-v2 dimension
 
 
 def create_collection():
@@ -36,25 +37,35 @@ def create_collection():
 
 def store_chunks(chunks: list[dict]):
     """
-    Embed and store chunks into Qdrant.
+    Embed and store chunks into Qdrant in small batches with delay.
     """
     create_collection()
 
-    points = []
-    for chunk in chunks:
-        embedding = get_embedding(chunk["content"])
-        points.append(PointStruct(
-            id=str(uuid.uuid4()),
-            vector=embedding,
-            payload={
-                "content": chunk["content"],
-                "source": chunk.get("source", "unknown"),
-                "page": chunk.get("page", chunk.get("row", chunk.get("chunk", 0)))
-            }
-        ))
+    BATCH_SIZE = 10
+    total = 0
 
-    client.upsert(collection_name=COLLECTION_NAME, points=points)
-    print(f"[Search Tool] Stored {len(points)} chunks in Qdrant")
+    for i in range(0, len(chunks), BATCH_SIZE):
+        batch = chunks[i:i + BATCH_SIZE]
+        points = []
+
+        for chunk in batch:
+            embedding = get_embedding(chunk["content"])
+            points.append(PointStruct(
+                id=str(uuid.uuid4()),
+                vector=embedding,
+                payload={
+                    "content": chunk["content"],
+                    "source": chunk.get("source", "unknown"),
+                    "page": chunk.get("page", chunk.get("row", chunk.get("chunk", 0)))
+                }
+            ))
+
+        client.upsert(collection_name=COLLECTION_NAME, points=points)
+        total += len(points)
+        print(f"[Search Tool] Stored batch {i//BATCH_SIZE + 1} — {total}/{len(chunks)} chunks")
+        time.sleep(0.5)  # small delay between batches
+
+    print(f"[Search Tool] All {total} chunks stored in Qdrant")
 
 
 def semantic_search(query: str, top_k: int = 5) -> list[dict]:
@@ -64,10 +75,11 @@ def semantic_search(query: str, top_k: int = 5) -> list[dict]:
     query_embedding = get_embedding(query)
 
     results = client.query_points(
-    collection_name=COLLECTION_NAME,
-    query=query_embedding,
-    limit=top_k
+        collection_name=COLLECTION_NAME,
+        query=query_embedding,
+        limit=top_k
     ).points
+
     return [
         {
             "content": r.payload["content"],

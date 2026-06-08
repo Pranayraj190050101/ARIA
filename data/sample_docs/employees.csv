@@ -1,11 +1,16 @@
-employee_id,name,department,role,salary,joining_date,performance_score,leave_balance,manager
-E001,Pranay Rodda,Data Science,ML Engineer,85000,2023-01-15,4.2,18,Rajesh Kumar
-E002,Ishwarya C,Engineering,Gen AI Developer,92000,2022-06-01,4.5,20,Suresh Patel
-E003,Aakash Mehta,Data Science,Data Analyst,72000,2023-03-10,3.8,15,Rajesh Kumar
-E004,Priya Sharma,Engineering,Backend Developer,88000,2021-11-20,4.1,12,Suresh Patel
-E005,Rahul Verma,HR,HR Manager,78000,2020-08-05,4.3,20,CEO
-E006,Sneha Iyer,Data Science,LLM Engineer,95000,2023-07-01,4.7,19,Rajesh Kumar
-E007,Vikram Singh,Engineering,DevOps Engineer,82000,2022-02-14,3.9,16,Suresh Patel
-E008,Ananya Das,Finance,Financial Analyst,76000,2021-05-30,4.0,14,CFO
-E009,Karthik Nair,Data Science,AI Researcher,98000,2022-09-15,4.8,20,Rajesh Kumar
-E010,Divya Reddy,Engineering,Frontend Developer,80000,2023-04-22,3.7,17,Suresh Patel
+employee_id,name,department,role,salary,joining_date,performance_score,leave_balance,manager,location,employment_type,notice_period_days,certifications,skills
+E001,Pranay Rodda,Data Science,ML Engineer,85000,2023-01-15,4.2,18,Rajesh Kumar,Bengaluru,Full-time,90,AWS ML Specialty,Python|LangChain|LangGraph|RAG|Qdrant
+E002,Ishwarya C,Engineering,Gen AI Developer,92000,2022-06-01,4.5,20,Suresh Patel,Bengaluru,Full-time,90,Azure AI Engineer,LangGraph|FastAPI|Docker|Python|RAGAS
+E003,Aakash Mehta,Data Science,Data Analyst,72000,2023-03-10,3.8,15,Rajesh Kumar,Hyderabad,Full-time,60,Google Data Analytics,SQL|Tableau|Python|Pandas
+E004,Priya Sharma,Engineering,Backend Developer,88000,2021-11-20,4.1,12,Suresh Patel,Bengaluru,Full-time,90,AWS Developer,Python|FastAPI|PostgreSQL|Docker
+E005,Rahul Verma,HR,HR Manager,78000,2020-08-05,4.3,20,CEO,Bengaluru,Full-time,90,SHRM-CP,HR Management|Recruitment|Payroll
+E006,Sneha Iyer,Data Science,LLM Engineer,95000,2023-07-01,4.7,19,Rajesh Kumar,Bengaluru,Full-time,90,DeepLearning.AI LangChain,LangChain|LangGraph|RAG|RAGAS|Guardrails
+E007,Vikram Singh,Engineering,DevOps Engineer,82000,2022-02-14,3.9,16,Suresh Patel,Pune,Full-time,90,CKA Kubernetes,Docker|Kubernetes|GitHub Actions|Terraform
+E008,Ananya Das,Finance,Financial Analyst,76000,2021-05-30,4.0,14,CFO,Bengaluru,Full-time,60,CFA Level 1,Excel|SQL|Financial Modeling|Power BI
+E009,Karthik Nair,Data Science,AI Researcher,98000,2022-09-15,4.8,20,Rajesh Kumar,Bengaluru,Full-time,90,NeurIPS Publications,PyTorch|Transformers|RAG|LangGraph|RAGAS
+E010,Divya Reddy,Engineering,Frontend Developer,80000,2023-04-22,3.7,17,Suresh Patel,Bengaluru,Full-time,60,Meta Frontend Developer,React|TypeScript|Tailwind|Next.js
+E011,Arjun Krishnan,Data Science,MLOps Engineer,91000,2022-11-08,4.4,18,Rajesh Kumar,Bengaluru,Full-time,90,AWS MLOps,MLflow|Kubeflow|Docker|Python|GitHub Actions
+E012,Meera Nambiar,Engineering,QA Engineer,70000,2023-06-20,3.6,15,Suresh Patel,Hyderabad,Full-time,60,ISTQB,Selenium|Python|Pytest|Postman
+E013,Rohit Gupta,Data Science,Data Engineer,86000,2021-09-12,4.2,16,Rajesh Kumar,Bengaluru,Full-time,90,Databricks Associate,Spark|Airflow|dbt|SQL|Python
+E014,Lakshmi Prasad,HR,Talent Acquisition,68000,2022-04-18,3.9,14,Rahul Verma,Bengaluru,Full-time,60,LinkedIn Recruiter,Recruitment|LinkedIn|HR Tools
+E015,Sanjay Mishra,Finance,CFO,180000,2019-03-01,4.6,20,CEO,Bengaluru,Full-time,90,CA|MBA Finance,Financial Planning|Risk Management|Compliance
