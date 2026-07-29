@@ -57,7 +57,7 @@ PDF Tool    CSV Tool    Text Tool
 | Guardrails | Custom PII + Injection Detection | Safety & security |
 | Evaluation | RAGAS-style Metrics | Answer quality scoring |
 | API | FastAPI | Production REST API |
-| Frontend | Huggingface | Interactive chat UI |
+| Frontend | Streamlit | Interactive chat UI |
 | Containerization | Docker | Deployment ready |
 | CI/CD | GitHub Actions | Automated pipeline |
 
